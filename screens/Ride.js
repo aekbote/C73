@@ -131,24 +131,7 @@ export default class RideScreen extends Component {
       .then(snapshot => {
         snapshot.docs.map(doc => {
 
-          // this.setState(
-          //   userName: doc.data().name,
-          //   userId: doc.data().id,
-          //   bikeAssigned: doc.data().bike_assigned
-          // );
-
-          // this.setState({
-          //   userName= doc.data().name,
-          //   userId= doc.data().id,
-          //   bikeAssigned= doc.data().bike_assigned
-          // });
-
-          // this.setState({
-          //   userName: doc.data().name
-          //   userId: doc.data().id
-          //   bikeAssigned: doc.data().bike_assigned
-          // });
-
+         
           this.setState({
              userName: doc.data().name,
              userId: doc.data().id,
@@ -174,18 +157,10 @@ export default class RideScreen extends Component {
         if (!doc.data().under_maintenance) {
           //if the bike is available then transaction type will be rented otherwise it will be return
 
-       /*transactionType = doc.data().is_bike_available ?
-        "rented" : "return";*/
+       transactionType = doc.data().is_bike_available ?
+        "rented" : "return";
 
-        transactionType = doc.data().is_bike_available :
-        "rented" ? "return";
-
-        /*transactionType === doc.data().is_bike_available ?
-        "rented" : "return";*/
-
-        /*transactionType = doc.data().is_bike_available 
-        "rented"  "return";*/
-
+        
 
         } else {
           transactionType = "under_maintenance";
